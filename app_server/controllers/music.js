@@ -1,7 +1,9 @@
+/* GET musiclist page */
 const musiclist  = function(req, res) {
-    res.render('musiclist', { musics : musicArray });
+    res.render('list-display', { musics : musicArray });
 };
 
+/* GET home page */
 const musicInfo = (req, res) => {
     res.render('index');
 };
