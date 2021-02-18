@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h2= title
+  h3 Here is a list of my favourite musics
+  table.table.table-striped.table-light
+    thead
+      td #
+      td.fw-bold Song
+      td.fw-bold Artist
+    tbody
+      each item in musics 
+        tr
+          td #{item.id}
+          td #{item.name}
+          td #{item.artist}

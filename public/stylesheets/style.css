@@ -1,0 +1,29 @@
+@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+
+body {
+  font-family: "Cabin", Arial, sans-serif;
+  color: rgb(20, 20, 20);
+  background-image: url(../images/background-image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lobster", cursive;
+}
+
+h1.title {
+  font-size: 5rem;
+  margin-top: 2em;
+}
+
+body > .container {
+  min-height: 25vh;
+}
