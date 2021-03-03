@@ -6,12 +6,18 @@ block content
   table.table.table-striped.table-light
     thead
       td #
-      td.fw-bold Song
+      td.fw-bold Album
       td.fw-bold Artist
+      td.fw-bold Songs 
+      td.fw-bold Year Of Release 
+      td.fw-bold Rating
     tbody
       each item in musics 
         tr
           td #{item.id}
-          td #{item.name}
+          td #{item.album}
           td #{item.artist}
+          td #{item.songs}
+          td #{item.yearOfRelease}
+          td #{items.rating}
             
