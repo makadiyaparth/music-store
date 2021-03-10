@@ -5,7 +5,7 @@ const apiOptions = {
 };
 
 const _renderHomepage = function(req, res, responseBody) {
-    res.render('index', {
+    res.render('musiclist', {
         musics: responseBody
     });
 };
@@ -26,7 +26,7 @@ const musiclist = function(req, res) {
 };
 
 const _renderDetailPage = function(req, res, responseBody) {
-    res.render('music-info', {
+    res.render('details', {
         currentmusic : responseBody
     });
 };
@@ -45,6 +45,9 @@ const musicInfo = function(req, res) {
         }
     );
 };
+const indexMusic = (req, res) => {
+    res.render('index', { title: 'Home' });
+};
 
 const createMusic = (req, res) => {
     res.render('create', { title: 'Create Music' });
@@ -52,5 +55,6 @@ const createMusic = (req, res) => {
 module.exports = {
     musiclist,
     musicInfo,
-    createMusic
+    createMusic,
+    indexMusic
 };
