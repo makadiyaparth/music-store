@@ -4,9 +4,11 @@ const ctrlAbout = require('../controllers/about');
 const ctrlMusic= require('../controllers/music');
 
 /* GET home page. */
-router.get('/', ctrlMusic.musicInfo);
+router.get('/', ctrlMusic.musiclist);
+router.get('/musics/:musicid', ctrlMusic.musicInfo);
+router.get('/new', ctrlMusic.createMusic);
 /* GET music list page. */
-router.get('/list', ctrlMusic.musiclist);
+// router.get('/list', ctrlMusic.musiclist);
 /* GET about page. */
 router.get('/about', ctrlAbout.about);
 

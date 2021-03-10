@@ -23,12 +23,14 @@ const gracefulShutdown = (msg, callback) => {
         callback();
     });
 };
-
+//for nodmon restarts
 process.once('SIGUSR2', () => {
     gracefulShutdown('nodmon restart', () => {
         process.kill(process.pid, 'SIGNUSR2');
     });
 });
+
+//for app termination
 
 process.on('SIGINT', () => {
     gracefulShutdown('app termination', () => {
@@ -36,6 +38,8 @@ process.on('SIGINT', () => {
     });
 });
 
+
+//for heroku app termination
 process.on('SIGTERM', () => {
     gracefulShutdown('Heroku app shutdown', () => {
         process.exit(0);

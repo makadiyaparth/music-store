@@ -1,6 +1,12 @@
 const mongoose = require('mongoose')
 
+//creating schema
+
 const reviewSchema = new mongoose.Schema({
+    id: {
+        type: Number,
+        required: true
+    },
     author: String,
     rating: {
         type: Number,
@@ -31,7 +37,7 @@ const musicSchema = new mongoose.Schema({
         min: 4,
         max: 4 
     },
-    reviews: [reviewSchema]
+    reviews: [reviewSchema] //creating subdocument
 });
 
 
