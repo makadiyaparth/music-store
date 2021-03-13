@@ -23,6 +23,10 @@ const musicSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    rank: {
+        type: Number,
+        required: true
+    },
     album: {
         type: String,
         required: true

@@ -11,7 +11,7 @@ router.route('/new')
     .get(ctrlMusic.addNewMusic)
     .post(ctrlMusic.doAddNewMusic);
 /* GET music list page. */
-// router.get('/list', ctrlMusic.musiclist);
+router.get('/list', ctrlMusic.musiclist);
 /* GET about page. */
 router.get('/about', ctrlAbout.about);
 

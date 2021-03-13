@@ -5,19 +5,19 @@ block content
   h3 Here is a list of popular musics across the globe...
   table.table.table-striped.table-light
     thead
-      td #
+      td.fw-bold Rank
       td.fw-bold Album
       td.fw-bold Artist
       td.fw-bold Songs 
       td.fw-bold Year Of Release 
     tbody
-      each item in musics 
+      each music in musics 
         tr  
-          td #{item.id}
-          td #{item.album}
-          td #{item.artist}
-          td #{item.songs}
-          td #{item.yearOfRelease}
+          td #{music.rank}
+          td #{music.album}
+          td #{music.artist}
+          td #{music.songs}
+          td #{music.yearOfRelease}
 
   p 
     a(href=`/new`) Create new Album

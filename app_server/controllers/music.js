@@ -62,6 +62,7 @@ const addNewMusic = function(req, res) {
 const doAddNewMusic = function(req, res) {
     const path = '/api/musics';
     const postdata = {
+        rank: req.body.rank,
         album: req.body.album,
         artist: req.body.artist,
         songs: req.body.songs,
