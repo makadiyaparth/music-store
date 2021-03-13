@@ -1,4 +1,6 @@
-const { musiclist } = require("../../app_server/controllers/music");
+//const { musiclist } = require("../../app_server/controllers/music");
+const mongoose = require('mongoose');
+const Music = mongoose.model('Music');
 
 const getMusics = function (req, res) {
     Music.find().exec(function (err, musicdata) {

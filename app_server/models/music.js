@@ -39,6 +39,4 @@ const musicSchema = new mongoose.Schema({
     },
     reviews: [reviewSchema] //creating subdocument
 });
-
-
-   mongoose.model('Music', musicSchema);
+mongoose.model('Music', musicSchema);

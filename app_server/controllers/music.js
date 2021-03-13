@@ -49,12 +49,42 @@ const indexMusic = (req, res) => {
     res.render('index', { title: 'Home' });
 };
 
-const createMusic = (req, res) => {
-    res.render('create', { title: 'Create Music' });
+const _renderCreatePage = function(req, res) {
+    res.render('create-new-music', {
+       title:"Create New Album" 
+    });
+};
+
+const addNewMusic = function(req, res) {
+    _renderCreatePage(req, res);
+};
+
+const doAddNewMusic = function(req, res) {
+    const path = '/api/musics';
+    const postdata = {
+        album: req.body.album,
+        artist: req.body.artist,
+        songs: req.body.songs,
+        yearOfRelease: req.body.yearOfRelease
+    };
+    const requestOptions = {
+        url: apiOptions.server + path,
+        method: 'POST',
+        json: postdata
+    };
+    request(
+      requestOptions,
+      (err, response, body) => {
+          if(response.statusCode === 201) {
+              res.redirect('/');
+          }
+      }  
+    );
 };
 module.exports = {
     musiclist,
     musicInfo,
-    createMusic,
+    addNewMusic,
+    doAddNewMusic,
     indexMusic
 };
